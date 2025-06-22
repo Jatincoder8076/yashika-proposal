@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Yashika 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#ffe6f0, #ffffff);
+      text-align: center;
+      color: #333;
+      overflow-x: hidden;
+    }
+    .container {
+      padding: 20px;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    h1, h2 {
+      color: #d63384;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff4da6;
+      color: white;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #e60073;
+    }
+    .hidden {
+      display: none;
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 192, 203, 0.5);
+      animation: float 10s infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 0; }
+      100% { transform: translateY(-100vh); opacity: 1; }
+    }
+    .game-question {
+      font-size: 18px;
+      margin-top: 30px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 15px;
+    }
+    .balloon-letter {
+      width: 80px;
+      height: 100px;
+      background-color: #ffc0cb;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      margin: 20px auto;
+      position: relative;
+      font-size: 28px;
+      color: #fff;
+      line-height: 100px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      animation: float 3s infinite ease-in-out;
+    }
+    .love-font {
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
+      color: #ff1493;
+      margin-top: 20px;
+    }
+    .wait-note {
+      font-size: 18px;
+      color: #888;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Bubbles Animation -->
+  <div class="bubble" style="width:40px;height:40px;left:10%;animation-delay:0s;"></div>
+  <div class="bubble" style="width:30px;height:30px;left:30%;animation-delay:2s;"></div>
+  <div class="bubble" style="width:50px;height:50px;left:50%;animation-delay:4s;"></div>
+  <div class="bubble" style="width:20px;height:20px;left:70%;animation-delay:6s;"></div>
+  <div class="bubble" style="width:35px;height:35px;left:90%;animation-delay:8s;"></div>
+
+  <div class="container">
+    <div class="balloon-letter">Y</div>
+    <div id="page1">
+      <h1>Hi Yashika 😇</h1>
+      <p>Maine tumhare liye ek choti si duniya banayi hai... jisme sirf tum ho 💫</p>
+      <button onclick="showNext('page2')">Tap to Begin 💌</button>
+    </div>
+    <div id="page2" class="hidden">
+      <h2>Jab Maine Tumhe Dekha... ❤️</h2>
+      <img src="https://i.imgur.com/0DnY4g3.jpg" alt="Yashika in Red" />
+      <p>Uss pal laga... jaise waqt ruk gaya ho 🥺<br> Tumhari ek muskaan mere din bana deti hai 🌸</p>
+      <button onclick="showNext('page3')">Next ➡️</button>
+    </div>
+    <div id="page3" class="hidden">
+      <h2>Un Aankhon Ka Jaadu ✨</h2>
+      <img src="https://i.imgur.com/zEuQbPa.jpg" alt="Yashika in B&W" />
+      <p>Woh aankhen... jaise ek nadiya ho jisme main doobta chala jaun... <br>Kabhi apni manzil paake, kabhi tum mein khud ko bhoolke 🥹</p>
+      <button onclick="showNext('page4')">Next ➡️</button>
+    </div>
+    <div id="page4" class="hidden">
+      <h2>Ek Choti Si Game 😁</h2>
+      <p class="game-question">Yashika, agar hum dono ek jagah kho jayein... toh kya tum mujhe pakadogi? 💖</p>
+      <button onclick="gameAnswer(true)">Haan, tumhe kabhi nahi chhodungi 😘</button>
+      <button onclick="gameAnswer(false)">Main pagal hoon tumhe chhodne wali? 🤭</button>
+      <button onclick="gameAnswer(true)">Main tumhe gale laga lungi aur kabhi jaane nahi dungi 💞</button>
+    </div>
+    <div id="page5" class="hidden">
+      <h2>Awwww 😘</h2>
+      <p>Tum toh sach mein sabse alag ho Yashika... <br>Is duniya ki sabse pyaari ladki 🫶</p>
+      <button onclick="showNext('page6')">Next ➡️</button>
+    </div>
+    <div id="page6" class="hidden">
+      <h2>Puzzle Time 🧩</h2>
+      <p>Mujhe batao, 3 magical words kya hote hain jinke bina pyar adhoora hai? 🤔</p>
+      <input id="puzzleInput" type="text" placeholder="Type here..."><br>
+      <button onclick="checkPuzzle()">Submit ❤️</button>
+    </div>
+    <div id="page7" class="hidden">
+      <div class="love-font">I LOVE YOU YASHIKA 💖</div>
+      <p>Yeh teen shabd mere dil se nikalte hain sirf tumhare liye...<br> Tum meri duniya ho, tumse hi main hoon 💫</p>
+      <button onclick="showNext('page8')">Next ➡️</button>
+    </div>
+    <div id="page8" class="hidden">
+      <h2>Will You Be Mine? 💍</h2>
+      <p>Bas itna kehna tha...<br><strong>Yashika, will you be mine forever?</strong></p>
+      <button onclick="accept()">Yes 💘</button>
+      <button onclick="wait()">I need time 🥺</button>
+    </div>
+    <div id="page9" class="hidden">
+      <h2>Yaaayyyy! 🎉</h2>
+      <p>Mujhe pata tha tum "haan" kahogi 😍<br> Ab main sirf tumhara hoon 💑</p>
+    </div>
+    <div id="waitPage" class="hidden">
+      <h2>I'll Wait... 🥺</h2>
+      <p>Tum chahe jitna waqt lo...<br>Main har roz tumhari muskaan ke liye dua karunga 🕊️<br>Sad nahi hoon, bas tumhare jawab ka intezaar hai 💖</p>
+      <div class="wait-note">Because tum khush ho, toh main khush hoon 💫</div>
+    </div>
+  </div>
+  <script>
+    function showNext(pageId) {
+      document.querySelectorAll(".container > div").forEach(div => div.classList.add("hidden"));
+      document.getElementById(pageId).classList.remove("hidden");
+    }
+    function gameAnswer(correct) {
+      showNext("page5");
+    }
+    function checkPuzzle() {
+      const input = document.getElementById("puzzleInput").value.trim().toLowerCase();
+      if (input === "i love you") {
+        showNext("page7");
+      } else {
+        alert("Galat jawab! Socho dil se ❤️");
+      }
+    }
+    function accept() {
+      showNext("page9");
+    }
+    function wait() {
+      showNext("waitPage");
+    }
+  </script>
+</body>
+</html>
